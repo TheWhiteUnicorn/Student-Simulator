@@ -1,14 +1,23 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: dd596d85003f09048bc05153d9f0d6ab
 timeCreated: 1523052576
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
+=======
+guid: 9bceb5ab85130e646a134690452726f5
+timeCreated: 1523132907
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+>>>>>>> 86eee1fd72f12a07c67d2eed045e4ea0b5812fdb
   fileIDToRecycleName:
     100000: //RootNode
     100002: default
     400000: //RootNode
     400002: default
+<<<<<<< HEAD
     2100000: min_Zeiger
     2100002: Sec_Zeiger
     2100004: Uhr_2.001
@@ -19,31 +28,48 @@ ModelImporter:
     3300000: default
     4300000: default
   externalObjects: {}
+=======
+    2300000: default
+    3300000: default
+    4300000: default
+>>>>>>> 86eee1fd72f12a07c67d2eed045e4ea0b5812fdb
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+<<<<<<< HEAD
     materialLocation: 1
+=======
+>>>>>>> 86eee1fd72f12a07c67d2eed045e4ea0b5812fdb
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+<<<<<<< HEAD
     rigImportErrors: 
     rigImportWarnings: 
+=======
+>>>>>>> 86eee1fd72f12a07c67d2eed045e4ea0b5812fdb
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+<<<<<<< HEAD
     importAnimatedCustomProperties: 0
+=======
+>>>>>>> 86eee1fd72f12a07c67d2eed045e4ea0b5812fdb
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+<<<<<<< HEAD
     extraUserProperties: []
+=======
+>>>>>>> 86eee1fd72f12a07c67d2eed045e4ea0b5812fdb
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -51,18 +77,25 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+<<<<<<< HEAD
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+=======
+    importBlendShapes: 1
+>>>>>>> 86eee1fd72f12a07c67d2eed045e4ea0b5812fdb
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+<<<<<<< HEAD
     preserveHierarchy: 0
     indexFormat: 0
+=======
+>>>>>>> 86eee1fd72f12a07c67d2eed045e4ea0b5812fdb
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -72,7 +105,10 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+<<<<<<< HEAD
     normalCalculationMode: 4
+=======
+>>>>>>> 86eee1fd72f12a07c67d2eed045e4ea0b5812fdb
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
