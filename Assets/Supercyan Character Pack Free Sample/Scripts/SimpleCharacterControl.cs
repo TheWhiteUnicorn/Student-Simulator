@@ -8,7 +8,7 @@ public class SimpleCharacterControl : MonoBehaviour {
         Tank,
         Direct
     }
-
+ [SerializeField] private CameraLogic m_cameraLogic;
     [SerializeField] private float m_moveSpeed = 2;
     [SerializeField] private float m_turnSpeed = 200;
     [SerializeField] private float m_jumpForce = 4;
