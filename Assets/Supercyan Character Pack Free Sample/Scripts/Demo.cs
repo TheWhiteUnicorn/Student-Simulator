@@ -28,9 +28,9 @@ public class Demo : MonoBehaviour {
     {
         GUILayout.BeginVertical(GUILayout.Width(Screen.width));
 
-        GUILayout.BeginHorizontal();
+       // GUILayout.BeginHorizontal();
 
-        if (GUILayout.Button("Previous character (Q)"))
+        /*if (GUILayout.Button("Previous character (Q)"))
         {
             m_cameraLogic.PreviousTarget();
         }
@@ -38,9 +38,11 @@ public class Demo : MonoBehaviour {
         if (GUILayout.Button("Next character (E)"))
         {
             m_cameraLogic.NextTarget();
-        }
+        }*/
 
-        GUILayout.EndHorizontal();
+       // GUILayout.EndHorizontal();
+
+
 
         GUILayout.Space(16);
 
@@ -67,19 +69,19 @@ public class Demo : MonoBehaviour {
 
         GUILayout.BeginHorizontal();
         GUILayout.FlexibleSpace();
-        GUILayout.Label("WASD or arrows: Move");
+       // GUILayout.Label("WASD or arrows: Move");
         GUILayout.FlexibleSpace();
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
         GUILayout.FlexibleSpace();
-        GUILayout.Label("Left Shift: Walk");
+       // GUILayout.Label("Left Shift: Walk");
         GUILayout.FlexibleSpace();
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
         GUILayout.FlexibleSpace();
-        GUILayout.Label("Space: Jump");
+       // GUILayout.Label("Space: Jump");
         GUILayout.FlexibleSpace();
         GUILayout.EndHorizontal();
 
