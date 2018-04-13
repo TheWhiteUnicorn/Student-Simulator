@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 42b6afc3447f5c649ab3ac558c2e6520
+guid: ba6a2fb6e0452e94caf6ea14b4926d06
 timeCreated: 18446744011573954816
 ModelImporter:
   serializedVersion: 22
@@ -10,7 +10,12 @@ ModelImporter:
     3300000: //RootNode
     4300000: table
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #25'
+    second: {fileID: 2100000, guid: e02d45a4e57ae104c870b634a28104b7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
