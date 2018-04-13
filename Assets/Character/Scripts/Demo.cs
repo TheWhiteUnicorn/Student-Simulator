@@ -46,7 +46,7 @@ public class Demo : MonoBehaviour {
 
         GUILayout.Space(16);
 
-        for(int i = 0; i < m_animations.Length; i++)
+        /*for(int i = 0; i < m_animations.Length; i++)
         {
             if(i == 0) { GUILayout.BeginHorizontal(); }
 
@@ -60,7 +60,7 @@ public class Demo : MonoBehaviour {
 
             if(i == m_animations.Length - 1) { GUILayout.EndHorizontal(); }
             else if (i == (m_animations.Length / 2)) { GUILayout.EndHorizontal(); GUILayout.BeginHorizontal(); }
-        }
+        }*/
 
         GUILayout.Space(16);
 
