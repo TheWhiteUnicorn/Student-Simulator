@@ -2,15 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stats {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+namespace Stats {
+	public class Stats {
+		public int hunger = 0;
+		public int energy = 0;
+		public int marks = 0;		
 	}
 }
