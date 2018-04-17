@@ -8,3 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Simulator_of_Student.unity
     guid: 5d1bc7f9eab32724993c56ae91d57881
+  - enabled: 1
+    path: Assets/Scenes/MathGame.unity
+    guid: 5478af0050dd03c4d8274f4e580909d4
