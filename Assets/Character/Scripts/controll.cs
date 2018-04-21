@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class SimpleCharacterControl : MonoBehaviour {
+public class AutovProssat : MonoBehaviour {
 
-	public Animator animator;
+	Animator animator;
 	private NavMeshAgent agent;
 	private Vector3 _prevPosition;
 	// Use this for initialization
@@ -14,7 +14,7 @@ public class SimpleCharacterControl : MonoBehaviour {
 		animator = GetComponent<Animator> ();
 		agent = GetComponent<NavMeshAgent> ();
 	}
-
+	
 	// Update is called once per frame
 	void Update () {
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
@@ -29,8 +29,8 @@ public class SimpleCharacterControl : MonoBehaviour {
 		if(Vector3.Distance(transform.position, agent.destination) < 0.1f){
 			agent.Stop ();
 			animator.SetBool ("Move", false);
-		}
-
-
 	}
+
+
+}
 }
