@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: d9dca9ae1786c394f9e79c637aa9a7bf, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 617d9be015db68348a623b01ea51a8c5, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.63
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4888308, g: 0.5698597, b: 0.61597395, a: 0.63}
+  m_IndirectSpecularColor: {r: 0.37999344, g: 0.65144545, b: 0.72995067, a: 0.63}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1883,6 +1883,12 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 75566089}
+--- !u!114 &80536489 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114196536536752842, guid: 0f86c063df73fcd4e96bad33353034be,
+    type: 2}
+  m_PrefabInternal: {fileID: 1416294947}
+  m_Script: {fileID: 11500000, guid: b24f0eeaf6b5fa74fb59e5d0d17fcb25, type: 3}
 --- !u!1 &91780411
 GameObject:
   m_ObjectHideFlags: 0
@@ -4400,6 +4406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 210321272}
   - component: {fileID: 210321273}
+  - component: {fileID: 210321274}
   m_Layer: 5
   m_Name: LearningProgresSlider
   m_TagString: Untagged
@@ -4479,12 +4486,51 @@ MonoBehaviour:
   m_MinValue: 2
   m_MaxValue: 5
   m_WholeNumbers: 0
-  m_Value: 4.48
+  m_Value: 4.28
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &210321274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 210321271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24f0eeaf6b5fa74fb59e5d0d17fcb25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: 100
+  energy: 100
+  marks: 4
+  popularityPoints: 0
+  pupularityLevel: 1
+  money: 5000
+  donateMoney: 1
+  visitedUniversityToday: 0
+  doneLabsToday: 0
+  dayOfWeek: 1
+  inPanelSliderStudy: {fileID: 0}
+  mainSliderEnergy: {fileID: 0}
+  mainSliderFood: {fileID: 0}
+  mainSliderStudy: {fileID: 0}
+  mainSliderPopularity: {fileID: 0}
+  statTextMoney: {fileID: 0}
+  statTextDonateMoney: {fileID: 0}
 --- !u!1 &214028351
 GameObject:
   m_ObjectHideFlags: 0
@@ -6137,77 +6183,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 299571241}
---- !u!1 &299915609
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 299915612}
-  - component: {fileID: 299915611}
-  - component: {fileID: 299915610}
-  m_Layer: 0
-  m_Name: Terrain
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!154 &299915610
-TerrainCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 299915609}
-  m_Material: {fileID: 0}
-  m_Enabled: 1
-  m_TerrainData: {fileID: 15600000, guid: 387a2589fc7ce3447bf051b9ed746223, type: 2}
-  m_EnableTreeColliders: 1
---- !u!218 &299915611
-Terrain:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 299915609}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_TerrainData: {fileID: 15600000, guid: 387a2589fc7ce3447bf051b9ed746223, type: 2}
-  m_TreeDistance: 2000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
-  m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 5
-  m_SplatMapDistance: 1000
-  m_HeightmapMaximumLOD: 0
-  m_CastShadows: 1
-  m_DrawHeightmap: 1
-  m_DrawTreesAndFoliage: 1
-  m_ReflectionProbeUsage: 1
-  m_MaterialType: 0
-  m_LegacySpecular:
-    serializedVersion: 2
-    rgba: 4286545791
-  m_LegacyShininess: 0.078125
-  m_MaterialTemplate: {fileID: 0}
-  m_BakeLightProbesForTrees: 1
-  m_ScaleInLightmap: 0.0512
-  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
---- !u!4 &299915612
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 299915609}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -72.3, y: 0, z: 7.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &300751629
 Prefab:
   m_ObjectHideFlags: 0
@@ -10255,7 +10230,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &613377631
 GameObject:
@@ -12592,7 +12567,7 @@ RectTransform:
   - {fileID: 919020517}
   - {fileID: 1693558296}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -0.155, y: 180.428, z: -0.001}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -19077,7 +19052,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.82666665
+  m_FillAmount: 0.76000005
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &1306705422
@@ -20752,7 +20727,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4623931593676938, guid: 0f86c063df73fcd4e96bad33353034be, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f86c063df73fcd4e96bad33353034be, type: 2}
@@ -21883,7 +21858,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 132.93399, y: -26.43399, z: 0.6819916}
 --- !u!1 &1454083624
 GameObject:
@@ -24464,8 +24439,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1675930518}
-        m_MethodName: Back
+      - m_Target: {fileID: 80536489}
+        m_MethodName: Study
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
