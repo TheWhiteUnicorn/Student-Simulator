@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BackToHostel1 : MonoBehaviour {
+public class GoStuding : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

@@ -6,8 +6,10 @@ public class ObjectsInteraction : MonoBehaviour {
 
 
     public GameObject Menu;
-	// Use this for initialization
-	void Start () {
+    public GameObject DarkPanel;
+    public GameObject Stop;
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -18,6 +20,14 @@ public class ObjectsInteraction : MonoBehaviour {
     void OnMouseDown ()
     {
         Menu.gameObject.SetActive(true);
+        Stop.gameObject.SetActive(true);
+        DarkPanel.gameObject.SetActive(true);
+        //Time.timeScale = 0.0F;
     }
-    
+
+    public void Off()
+    {
+        Menu.gameObject.SetActive(false);
+       // Time.timeScale = 1.0F;
+    }
 }
