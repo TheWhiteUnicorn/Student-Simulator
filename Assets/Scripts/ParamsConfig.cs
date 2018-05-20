@@ -41,8 +41,8 @@ namespace Stats {
         public const float MARKS_INCREASE_LABS = 1.0f;
 
         // *Влияние на очки популярности
-        public const int POP_INCREASE_SC = -1;
-        public const int POP_INCREASE_SOMETHING_ELSE = -1;
+        public const int POP_INCREASE_SC = 50;
+        public const int POP_INCREASE_SOMETHING_ELSE = 50;
 
         // *Восстановление энергии во время сна
         public const int ENERGY_RESTORE_MIN = 20;

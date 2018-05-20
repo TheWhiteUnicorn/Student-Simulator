@@ -17,6 +17,7 @@ public class BackToHostel : MonoBehaviour {
 
     public void Back()
     {
-        SceneManager.LoadScene(0);
+		GlobalVariables.isStudied = true;
+        SceneManager.LoadScene(0);		
     }
 }
