@@ -6442,6 +6442,10 @@ Prefab:
       propertyPath: m_Intensity
       value: 1.1
       objectReference: {fileID: 0}
+    - target: {fileID: 1325201300531314, guid: 368e8edd5fbaea44795ef31937d63589, type: 2}
+      propertyPath: m_Name
+      value: Dask
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 65619631093693818, guid: 368e8edd5fbaea44795ef31937d63589, type: 2}
     - {fileID: 114345990857514988, guid: 368e8edd5fbaea44795ef31937d63589, type: 2}
