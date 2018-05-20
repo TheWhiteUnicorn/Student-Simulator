@@ -1,5 +1,5 @@
-C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\b\Assembly-CSharp.dll
-C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\b\Assembly-CSharp.pdb
+C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\b\Assembly-CSharp-Editor.dll
+C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\b\Assembly-CSharp-Editor.pdb
 C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\b\nunit.framework.dll
 C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\b\UnityEditor.Advertisements.dll
 C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\b\UnityEditor.Analytics.dll
@@ -42,6 +42,7 @@ C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\b\Unity.C
 C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\b\UnityEditor.iOS.Extensions.Xcode.dll
 C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\b\Unity.CecilTools.dll
 C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\b\Unity.Cecil.Pdb.dll
+C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\b\Assembly-CSharp.pdb
 C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\b\UnityEngine.xml
 C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\b\UnityEditor.xml
 C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\b\UnityEngine.UI.xml
@@ -77,7 +78,8 @@ C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\b\ru\Micr
 C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\b\tr\Microsoft.CodeAnalysis.LiveUnitTesting.Runtime.resources.dll
 C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\b\zh-Hans\Microsoft.CodeAnalysis.LiveUnitTesting.Runtime.resources.dll
 C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\b\zh-Hant\Microsoft.CodeAnalysis.LiveUnitTesting.Runtime.resources.dll
-C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\i\Assembly-CSharp\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
-C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\i\Assembly-CSharp\Debug\Assembly-CSharp.csproj.CopyComplete
-C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\i\Assembly-CSharp\Debug\Assembly-CSharp.dll
-C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\i\Assembly-CSharp\Debug\Assembly-CSharp.pdb
+C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\i\Assembly-CSharp-Editor\Debug\Assembly-CSharp-Editor.csprojResolveAssemblyReference.cache
+C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\i\Assembly-CSharp-Editor\Debug\Assembly-CSharp-Editor.csproj.CoreCompileInputs.cache
+C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\i\Assembly-CSharp-Editor\Debug\Assembly-CSharp-Editor.csproj.CopyComplete
+C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\i\Assembly-CSharp-Editor\Debug\Assembly-CSharp-Editor.dll
+C:\Users\Deeee\Documents\Student-Simulator\.vs\Student-Simulator\lut\0\i\Assembly-CSharp-Editor\Debug\Assembly-CSharp-Editor.pdb

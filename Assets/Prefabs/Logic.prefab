@@ -19,14 +19,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4623931593676938}
-  - component: {fileID: 114196536536752842}
   m_Layer: 0
   m_Name: Logic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4623931593676938
 Transform:
   m_ObjectHideFlags: 1
@@ -40,31 +39,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114196536536752842
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1162633312302134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24f0eeaf6b5fa74fb59e5d0d17fcb25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  food: 100
-  energy: 100
-  marks: 4
-  popularityPoints: 0
-  pupularityLevel: 1
-  money: 5000
-  donateMoney: 1
-  visitedUniversityToday: 0
-  doneLabsToday: 0
-  dayOfWeek: 1
-  inPanelSliderStudy: {fileID: 0}
-  mainSliderEnergy: {fileID: 0}
-  mainSliderFood: {fileID: 0}
-  mainSliderStudy: {fileID: 0}
-  mainSliderPopularity: {fileID: 0}
-  statTextMoney: {fileID: 0}
-  statTextDonateMoney: {fileID: 0}
