@@ -17,6 +17,7 @@ public class Test : MonoBehaviour {
 
 	public void OnMouseDown ()
     {
-        animController.SetBool("IdleBool", false);
+        animController.SetBool("IdleBool", true);
     }
+
 }
