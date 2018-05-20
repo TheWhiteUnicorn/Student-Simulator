@@ -32,6 +32,10 @@ namespace Stats {
 			visitedUniversityToday = false;
 			doneLabsToday = false;
 			dayOfWeek = 1;
+
+			// SetBoundsToSliders();
+			// UpdateAllSliders();
+			// UpdateAllNumericStats();
 		}
 
 		// Вызывать при окончании дня. Производит пересчеты необходимых статов для следующего дня
@@ -131,6 +135,25 @@ namespace Stats {
 			mainSliderPopularity.value = popularityPoints;
 		}
 
+		private void SetBoundsToSliders(){
+			mainSliderEnergy.minValue = Params.MIN_ZERO;
+			mainSliderEnergy.maxValue = Params.MAX_ENERGY;
+
+			mainSliderFood.minValue = Params.MIN_ZERO;
+			mainSliderFood.maxValue = Params.MAX_FOOD;
+
+			mainSliderStudy.minValue = Params.MIN_ZERO;
+			mainSliderStudy.maxValue = Params.MAX_MARKS;
+
+			inPanelSliderStudy.minValue = Params.MIN_ZERO;
+			inPanelSliderStudy.maxValue = Params.MAX_MARKS;
+
+			// mainSliderPopularity.minValue = Params.MIN;
+			// mainSliderPopularity.maxValue = Params.MAX_ENERGY;
+
+
+		}
+
 		// Цифровые показатели статов
 		public Text statTextMoney;
 		public Text statTextDonateMoney;
@@ -138,5 +161,7 @@ namespace Stats {
 			statTextMoney.text = Convert.ToString(money);
 			statTextDonateMoney.text = Convert.ToString(donateMoney);
 		}
+
+
 	}
 }
