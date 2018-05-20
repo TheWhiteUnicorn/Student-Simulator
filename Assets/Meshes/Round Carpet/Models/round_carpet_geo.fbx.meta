@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8d5a11bd06da90543b4faa8b968b2cc2
+guid: c2bee5155f1d10e44b9471c24e06389a
 timeCreated: 18446744011573954816
 ModelImporter:
   serializedVersion: 22
@@ -10,7 +10,12 @@ ModelImporter:
     3300000: //RootNode
     4300000: carpet_geo
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: ed76f1ef39e89f2459c98750579e1057, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
