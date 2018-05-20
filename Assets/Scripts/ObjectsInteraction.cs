@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ObjectsInteraction : MonoBehaviour {
 
-
     public GameObject Menu;
     public GameObject DarkPanel;
     public GameObject Stop;
