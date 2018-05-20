@@ -1224,6 +1224,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  coll: {fileID: 0}
+  coll2: {fileID: 0}
+  coll3: {fileID: 0}
 --- !u!136 &136606663363984694
 CapsuleCollider:
   m_ObjectHideFlags: 1
