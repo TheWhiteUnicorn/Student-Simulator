@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.63
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.33906934, g: 0.58498317, b: 0.6561026, a: 0.497}
+  m_IndirectSpecularColor: {r: 0.48866355, g: 0.5697321, b: 0.6158846, a: 0.63}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -6398,27 +6398,27 @@ Prefab:
     - target: {fileID: 108999184850154508, guid: 368e8edd5fbaea44795ef31937d63589,
         type: 2}
       propertyPath: m_Intensity
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 108309034372351520, guid: 368e8edd5fbaea44795ef31937d63589,
         type: 2}
       propertyPath: m_Intensity
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 108317228463369400, guid: 368e8edd5fbaea44795ef31937d63589,
         type: 2}
       propertyPath: m_BounceIntensity
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 108999184850154508, guid: 368e8edd5fbaea44795ef31937d63589,
         type: 2}
       propertyPath: m_BounceIntensity
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 108309034372351520, guid: 368e8edd5fbaea44795ef31937d63589,
         type: 2}
       propertyPath: m_BounceIntensity
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4996296629044482, guid: 368e8edd5fbaea44795ef31937d63589, type: 2}
       propertyPath: m_LocalPosition.x
@@ -6435,7 +6435,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1429612940951836, guid: 368e8edd5fbaea44795ef31937d63589, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108317228463369400, guid: 368e8edd5fbaea44795ef31937d63589,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 1.1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 65619631093693818, guid: 368e8edd5fbaea44795ef31937d63589, type: 2}
@@ -19830,13 +19835,29 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: [{m_Target: {fileID: 1731617544}, m_MethodName: set_enabled, m_Mode: 6,
-          m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object,
-              UnityEngine', m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: '',
-            m_BoolArgument: 1}, m_CallState: 2}, {m_Target: {fileID: 1731617543},
-          m_MethodName: SetActive, m_Mode: 0, m_Arguments: {m_ObjectArgument: {fileID: 0},
-            m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object, UnityEngine', m_IntArgument: 0,
-            m_FloatArgument: 0, m_StringArgument: '', m_BoolArgument: 1}, m_CallState: 2}]
+      m_Calls:
+      - m_Target: {fileID: 1731617544}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1731617543}
+        m_MethodName: SetActive
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 1
