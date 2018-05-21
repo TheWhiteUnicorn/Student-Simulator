@@ -44,8 +44,9 @@ namespace Stats {
 			if(GlobalVariables.isStudied){
 				DoLabs();
 			}
+			SetBoundsToSliders();
 			UpdateAllSliders();
-			UpdateAllNumericStats();
+			UpdateAllNumericStats();			
 		}
 
 		// Вызывать при окончании дня. Производит пересчеты необходимых статов для следующего дня
@@ -122,6 +123,7 @@ namespace Stats {
 			money -= catalogue.Food[name].price;
 			donateMoney -= catalogue.Food[name].donatePrice;
 			UpdateAllSliders();
+			UpdateAllNumericStats();
 		}
 
 		public void ConsumeEnergyDrink(string name){  // excepion: KeyNotFoundException
@@ -129,6 +131,7 @@ namespace Stats {
 			money -= catalogue.EnergyDrinks[name].price;
 			donateMoney -= catalogue.EnergyDrinks[name].donatePrice;
 			UpdateAllSliders();
+			UpdateAllNumericStats();
 		}
 
 		private void IncreasePopularity(int value){
