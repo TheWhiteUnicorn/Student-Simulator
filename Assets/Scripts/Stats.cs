@@ -54,6 +54,10 @@ namespace Stats {
 			// Приминяем все ежедневные уменьшения статов
 			marks -= Params.ENDOFDAY_DECREASE_MARKS;
 
+			// Рассчет энергии на след. день
+			float foodPercent = ((float)food / (float)Params.MAX_FOOD);
+			energy = Params.ENERGY_RESTORE_MIN + (int)((Params.ENERGY_RESTORE_FULL_FOOD - Params.ENERGY_RESTORE_MIN) * foodPercent);
+
 			if(foodDecreasedToday < Params.ENDOFDAY_MIN_DECREASE_FOOD){
 				food = food - (Params.ENDOFDAY_MIN_DECREASE_FOOD - foodDecreasedToday);
 			}
@@ -69,10 +73,6 @@ namespace Stats {
 				marks += Params.MARKS_INCREASE_LABS;
 				doneLabsToday = false;
 			}
-
-			// Рассчет энергии на след. день
-			int foodPercent = (food / Params.MAX_FOOD);
-			energy = Params.ENERGY_RESTORE_MIN + ((Params.ENERGY_RESTORE_FULL_FOOD - Params.ENERGY_RESTORE_MIN) * foodPercent);
 
 			//Считаем дни недели
 			++dayOfWeek;
@@ -118,20 +118,26 @@ namespace Stats {
 		}
 
 		public void ConsumeFood(string name) // excepion: KeyNotFoundException
-		{ 
-			food += catalogue.Food[name].restores;
-			money -= catalogue.Food[name].price;
-			donateMoney -= catalogue.Food[name].donatePrice;
-			UpdateAllSliders();
-			UpdateAllNumericStats();
+		{
+			if(catalogue.Food[name].price >= money && catalogue.Food[name].donatePrice >= donateMoney){
+				food += catalogue.Food[name].restores;
+				money -= catalogue.Food[name].price;
+				donateMoney -= catalogue.Food[name].donatePrice;
+			
+				UpdateAllSliders();
+				UpdateAllNumericStats();
+			}
 		}
 
 		public void ConsumeEnergyDrink(string name){  // excepion: KeyNotFoundException
-			energy += catalogue.EnergyDrinks[name].restores;
-			money -= catalogue.EnergyDrinks[name].price;
-			donateMoney -= catalogue.EnergyDrinks[name].donatePrice;
-			UpdateAllSliders();
-			UpdateAllNumericStats();
+			if(catalogue.Food[name].price >= money && catalogue.Food[name].donatePrice >= donateMoney){
+				energy += catalogue.EnergyDrinks[name].restores;
+				money -= catalogue.EnergyDrinks[name].price;
+				donateMoney -= catalogue.EnergyDrinks[name].donatePrice;
+
+				UpdateAllSliders();
+				UpdateAllNumericStats();
+			}
 		}
 
 		private void IncreasePopularity(int value){
