@@ -54,6 +54,10 @@ namespace Stats {
 			// Приминяем все ежедневные уменьшения статов
 			marks -= Params.ENDOFDAY_DECREASE_MARKS;
 
+			// Рассчет энергии на след. день
+			float foodPercent = ((float)food / (float)Params.MAX_FOOD);
+			energy = Params.ENERGY_RESTORE_MIN + (int)((Params.ENERGY_RESTORE_FULL_FOOD - Params.ENERGY_RESTORE_MIN) * foodPercent);
+
 			if(foodDecreasedToday < Params.ENDOFDAY_MIN_DECREASE_FOOD){
 				food = food - (Params.ENDOFDAY_MIN_DECREASE_FOOD - foodDecreasedToday);
 			}
@@ -69,10 +73,6 @@ namespace Stats {
 				marks += Params.MARKS_INCREASE_LABS;
 				doneLabsToday = false;
 			}
-
-			// Рассчет энергии на след. день
-			int foodPercent = (food / Params.MAX_FOOD);
-			energy = Params.ENERGY_RESTORE_MIN + ((Params.ENERGY_RESTORE_FULL_FOOD - Params.ENERGY_RESTORE_MIN) * foodPercent);
 
 			//Считаем дни недели
 			++dayOfWeek;
