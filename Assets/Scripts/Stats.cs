@@ -120,12 +120,14 @@ namespace Stats {
 		{ 
 			food += catalogue.Food[name].restores;
 			money -= catalogue.Food[name].price;
+			donateMoney -= catalogue.Food[name].donatePrice;
 			UpdateAllSliders();
 		}
 
 		public void ConsumeEnergyDrink(string name){  // excepion: KeyNotFoundException
 			energy += catalogue.EnergyDrinks[name].restores;
 			money -= catalogue.EnergyDrinks[name].price;
+			donateMoney -= catalogue.EnergyDrinks[name].donatePrice;
 			UpdateAllSliders();
 		}
 

@@ -57,20 +57,22 @@ namespace Stats {
 
     struct ConsumableProduct {
         public int price;
+        public int donatePrice;
         public int restores;
     }
 
     class Catalogue {
         public Dictionary<string, ConsumableProduct> Food = new Dictionary<string, ConsumableProduct> {
             {"SmallBon", new ConsumableProduct {price = 50, restores = 10}}, 
-            {"LaunchBox", new ConsumableProduct {price = 120, restores = 25}}, 
-            {"DinnerCFK", new ConsumableProduct {price = 220, restores = 50}}, 
+            {"Launch", new ConsumableProduct {price = 120, restores = 25}}, 
+            {"CFK", new ConsumableProduct {price = 220, restores = 50}} 
         };
 
         public Dictionary<string, ConsumableProduct> EnergyDrinks = new Dictionary<string, ConsumableProduct> {
-            {"NesCoffee", new ConsumableProduct {price = 100, restores = 20}}, 
-            {"RadDoll", new ConsumableProduct {price = 225, restores = 50}}, 
+            {"Liptop", new ConsumableProduct {price = 100, restores = 20}}, 
+            {"NesCoffee", new ConsumableProduct {price = 225, restores = 50}}, 
             {"GreenBull", new ConsumableProduct {price = 430, restores = 100}}, 
+            {"Siluwka", new ConsumableProduct {donatePrice = 430, restores = 100}} 
         };
     }
 }
