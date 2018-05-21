@@ -20,5 +20,6 @@ public class Wardboard : MonoBehaviour {
 		{
 			animController.SetBool("IdleBool", false);
 		}
+		
 	}
 }
