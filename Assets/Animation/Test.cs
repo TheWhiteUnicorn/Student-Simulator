@@ -5,7 +5,6 @@ using UnityEngine;
 public class Test : MonoBehaviour {
 
 	public Animator animController;
-	public bool IsOpen = false;
 	// Use this for initialization
 	void Start () {
 		
@@ -17,18 +16,8 @@ public class Test : MonoBehaviour {
 	}
 
 	public void OnMouseDown ()
-    { 	
-		if (IsOpen == false)
-		{
-		     animController.SetBool("IdleBool", true);
-			IsOpen = true;
-		}
-		else 
-		{
-			animController.SetBool("IdleBool", false);
-			IsOpen = false;
-		}
-
+    {
+        animController.SetBool("IdleBool", true);
     }
 
 }
