@@ -72,7 +72,7 @@ namespace Stats {
             {"Liptop", new ConsumableProduct {price = 100, restores = 20}}, 
             {"NesCoffee", new ConsumableProduct {price = 225, restores = 50}}, 
             {"GreenBull", new ConsumableProduct {price = 430, restores = 100}}, 
-            {"Siluwka", new ConsumableProduct {donatePrice = 430, restores = 100}} 
+            {"Siluwka", new ConsumableProduct {donatePrice = 1, restores = 100}} 
         };
     }
 }
