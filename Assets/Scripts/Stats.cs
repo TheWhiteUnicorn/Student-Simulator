@@ -1,12 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Stats {
 
 	public class Stats : MonoBehaviour {
 		// Основные статы
-		public int hunger = Params.INIT_HUNGER;
+		public int food = Params.INIT_FOOD;
 		public int energy = Params.INIT_ENERGY;
 		public float marks = Params.INIT_MARKS;
 		public int popularityPoints = Params.INIT_POPULARITY_POINTS;
@@ -17,12 +19,12 @@ namespace Stats {
 		public int donateMoney = Params.INIT_DONATE_MONEY;
 
 		// Флаги выполнения активностей
-		public bool visitedUniversityToday {get{return visitedUniversityToday;} private set{}}
-		public bool doneLabsToday {get{return doneLabsToday;} private set{}}
+		public bool visitedUniversityToday;// {get{return visitedUniversityToday;} private set{}}
+		public bool doneLabsToday;// {get{return doneLabsToday;} private set{}} ШОТА НИРАБОТАЕТ
 
 		// Служебные переменные
 		private int foodDecreasedToday = 0; // Используется для вычитания минимального кол-ва голода за день
-		public int dayOfWeek {get{return dayOfWeek;} private set{}}
+		public int dayOfWeek;// {get{return dayOfWeek;} private set{}}
 
 		Catalogue catalogue;
 		public Stats(){
@@ -30,6 +32,20 @@ namespace Stats {
 			visitedUniversityToday = false;
 			doneLabsToday = false;
 			dayOfWeek = 1;
+
+			// SetBoundsToSliders();
+			// UpdateAllSliders();
+			// UpdateAllNumericStats();
+		}
+
+		void OnEnable()
+		{
+			Debug.Log("logic enabled");
+			if(GlobalVariables.isStudied){
+				DoLabs();
+			}
+			UpdateAllSliders();
+			UpdateAllNumericStats();
 		}
 
 		// Вызывать при окончании дня. Производит пересчеты необходимых статов для следующего дня
@@ -38,7 +54,7 @@ namespace Stats {
 			marks -= Params.ENDOFDAY_DECREASE_MARKS;
 
 			if(foodDecreasedToday < Params.ENDOFDAY_MIN_DECREASE_FOOD){
-				hunger = hunger - (Params.ENDOFDAY_MIN_DECREASE_FOOD - foodDecreasedToday);
+				food = food - (Params.ENDOFDAY_MIN_DECREASE_FOOD - foodDecreasedToday);
 			}
 			foodDecreasedToday = 0;
 
@@ -54,8 +70,8 @@ namespace Stats {
 			}
 
 			// Рассчет энергии на след. день
-			int hungerPercent = (hunger / Params.MAX_HUNGER);
-			energy = Params.ENERGY_RESTORE_MIN + (Params.ENERGY_RESTORE_FULL_FOOD - Params.ENERGY_RESTORE_MIN) * hungerPercent;
+			int foodPercent = (food / Params.MAX_FOOD);
+			energy = Params.ENERGY_RESTORE_MIN + ((Params.ENERGY_RESTORE_FULL_FOOD - Params.ENERGY_RESTORE_MIN) * foodPercent);
 
 			//Считаем дни недели
 			++dayOfWeek;
@@ -63,6 +79,10 @@ namespace Stats {
 				dayOfWeek = 1;
 				EndOfWeek();
 			}
+
+			studyToggle.GetComponent<StudyingToggleHandle>().setUncheckAndUnlock();
+			UpdateAllSliders();
+			UpdateAllNumericStats();
 		}
 
 		private void EndOfWeek() {
@@ -75,36 +95,88 @@ namespace Stats {
 		// Пойти в универ. Устанавливает флаг, а очки начисляет в конце дня по его значению
 		public void Study(){
 			energy -= Params.STUDY_ENERGY_COST;
-			hunger -= Params.STUDY_HUNGER_COST;
+			food -= Params.STUDY_FOOD_COST;
 			visitedUniversityToday = true;
+
+			UpdateAllSliders();
 		}
 
 		// Сделать лабы. Устанавливает флаг, а очки начисляет в конце дня по его значению
 		public void DoLabs(){
 			energy -= Params.LABS_ENERGY_COST;
-			hunger -= Params.LABS_HUNGER_COST;
+			food -= Params.LABS_FOOD_COST;
 			doneLabsToday = true;
+			UpdateAllSliders();
 		}
 
 		public void GoToSC(){
 			energy -= Params.SK_ENERGY_COST;
-			hunger -= Params.SK_HUNGER_COST;
+			food -= Params.SK_FOOD_COST;
 			IncreasePopularity(Params.POP_INCREASE_SC);
+			UpdateAllSliders();
 		}
 
 		public void ConsumeFood(string name) // excepion: KeyNotFoundException
 		{ 
-			hunger += catalogue.Food[name].restores;
+			food += catalogue.Food[name].restores;
 			money -= catalogue.Food[name].price;
+			UpdateAllSliders();
 		}
 
 		public void ConsumeEnergyDrink(string name){  // excepion: KeyNotFoundException
 			energy += catalogue.EnergyDrinks[name].restores;
 			money -= catalogue.EnergyDrinks[name].price;
+			UpdateAllSliders();
 		}
 
 		private void IncreasePopularity(int value){
 			popularityPoints += value;
+			UpdateAllSliders();
 		}
+		
+		// СЛАЙДЕРЫ
+		public Slider inPanelSliderStudy;
+		public Slider mainSliderEnergy;
+		public Slider mainSliderFood;
+		public Slider mainSliderStudy;
+		public Slider mainSliderPopularity;
+
+
+		private void UpdateAllSliders(){
+			inPanelSliderStudy.value = marks;
+			mainSliderEnergy.value = energy;
+			mainSliderFood.value = food;
+			mainSliderStudy.value = marks;
+			mainSliderPopularity.value = popularityPoints;
+		}
+
+		private void SetBoundsToSliders(){
+			mainSliderEnergy.minValue = Params.MIN_ZERO;
+			mainSliderEnergy.maxValue = Params.MAX_ENERGY;
+
+			mainSliderFood.minValue = Params.MIN_ZERO;
+			mainSliderFood.maxValue = Params.MAX_FOOD;
+
+			mainSliderStudy.minValue = Params.MIN_ZERO;
+			mainSliderStudy.maxValue = Params.MAX_MARKS;
+
+			inPanelSliderStudy.minValue = Params.MIN_ZERO;
+			inPanelSliderStudy.maxValue = Params.MAX_MARKS;
+
+			// mainSliderPopularity.minValue = Params.MIN;
+			// mainSliderPopularity.maxValue = Params.MAX_ENERGY;
+
+
+		}
+
+		// Цифровые показатели статов
+		public Text statTextMoney;
+		public Text statTextDonateMoney;
+		private void UpdateAllNumericStats(){
+			statTextMoney.text = Convert.ToString(money);
+			statTextDonateMoney.text = Convert.ToString(donateMoney);
+		}
+
+		public Toggle studyToggle;
 	}
 }
