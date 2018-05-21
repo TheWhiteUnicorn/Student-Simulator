@@ -5999,6 +5999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animController: {fileID: 95285729927605560}
+  IsOpen: 0
 --- !u!114 &114793272153415960
 MonoBehaviour:
   m_ObjectHideFlags: 1

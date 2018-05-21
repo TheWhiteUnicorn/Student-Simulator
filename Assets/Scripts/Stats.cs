@@ -8,34 +8,44 @@ namespace Stats {
 
 	public class Stats : MonoBehaviour {
 		// Основные статы
-		public int food = Params.INIT_FOOD;
-		public int energy = Params.INIT_ENERGY;
-		public float marks = Params.INIT_MARKS;
-		public int popularityPoints = Params.INIT_POPULARITY_POINTS;
-		public int pupularityLevel = Params.INIT_POPULARITY_LEVEL;
+		public static int food = Params.INIT_FOOD;
+		public static int energy = Params.INIT_ENERGY;
+		public static float marks = Params.INIT_MARKS;
+		public static int popularityPoints = Params.INIT_POPULARITY_POINTS;
+		public static int pupularityLevel = Params.INIT_POPULARITY_LEVEL;
 
 		// Игровые валюты
-		public int money = Params.INIT_MONEY;
-		public int donateMoney = Params.INIT_DONATE_MONEY;
+		public static int money = Params.INIT_MONEY;
+		public static int donateMoney = Params.INIT_DONATE_MONEY;
 
 		// Флаги выполнения активностей
-		public bool visitedUniversityToday;// {get{return visitedUniversityToday;} private set{}}
-		public bool doneLabsToday;// {get{return doneLabsToday;} private set{}} ШОТА НИРАБОТАЕТ
+		public static bool visitedUniversityToday = false;// {get{return visitedUniversityToday;} private set{}}
+		public static bool doneLabsToday;// {get{return doneLabsToday;} private set{}} ШОТА НИРАБОТАЕТ
 
 		// Служебные переменные
-		private int foodDecreasedToday = 0; // Используется для вычитания минимального кол-ва голода за день
-		public int dayOfWeek;// {get{return dayOfWeek;} private set{}}
+		private static int foodDecreasedToday = 0; // Используется для вычитания минимального кол-ва голода за день
+		public static int dayOfWeek;// {get{return dayOfWeek;} private set{}}
 
 		Catalogue catalogue;
 		public Stats(){
 			catalogue = new Catalogue();
-			visitedUniversityToday = false;
-			doneLabsToday = false;
+			//visitedUniversityToday = false;
+			//doneLabsToday = false;
 			dayOfWeek = 1;
+		}
 
-			// SetBoundsToSliders();
-			// UpdateAllSliders();
-			// UpdateAllNumericStats();
+		private static bool statsObjectCreated = false;
+
+		void Awake()
+		{
+			bindAllSliders();
+			SetBoundsToSliders();
+
+			// if (!statsObjectCreated)
+			// {
+			// 	DontDestroyOnLoad(this.gameObject);
+			// 	statsObjectCreated = true;
+			// }
 		}
 
 		void OnEnable()
@@ -44,7 +54,8 @@ namespace Stats {
 			if(GlobalVariables.isStudied){
 				DoLabs();
 			}
-			SetBoundsToSliders();
+			bindAllSliders();
+			UpdateUniverToggle();
 			UpdateAllSliders();
 			UpdateAllNumericStats();			
 		}
@@ -106,7 +117,7 @@ namespace Stats {
 		public void DoLabs(){
 			energy -= Params.LABS_ENERGY_COST;
 			food -= Params.LABS_FOOD_COST;
-			doneLabsToday = true;
+			doneLabsToday = true; //TODO переделать
 			UpdateAllSliders();
 		}
 
@@ -152,6 +163,48 @@ namespace Stats {
 		public Slider mainSliderStudy;
 		public Slider mainSliderPopularity;
 
+		void bindAllSliders(){
+			// GameObject tempObject = GameObject.Find("LearningProgresSliderInMenu");
+    		// if(tempObject != null){
+        	// 	//If we found the object , get the Canvas component from it.
+        	// 	inPanelSliderStudy = tempObject.GetComponent<Slider>();
+       		// 	if(inPanelSliderStudy == null){
+            // 		Debug.Log("Could not locate Slider component on " + tempObject.name);
+        	// 	}
+    		// }
+
+			foreach (Slider go in Resources.FindObjectsOfTypeAll(typeof(Slider)) as Slider[]){
+				switch (go.name){
+					case "LearningProgresSliderInMenu":
+						inPanelSliderStudy = go;
+					break;
+					case "EnergySlider":
+						mainSliderEnergy = go;
+					break;
+					case "FoodSlider":
+						mainSliderFood = go;
+					break;
+					case "LearningProgresSlider":
+						mainSliderStudy = go;
+					break;
+					case "PopularitySlider":
+						mainSliderPopularity = go;
+					break;
+				}
+			}
+
+			foreach (Toggle go in Resources.FindObjectsOfTypeAll(typeof(Toggle)) as Toggle[]){
+				if(go.name == "UniversityToggle"){
+					studyToggle = go;
+				}
+			}
+
+			GameObject tempObject = GameObject.Find("QuantityMoney");
+			statTextMoney = tempObject.GetComponent<Text>();
+
+			tempObject = GameObject.Find("QuantitySnacks");
+			statTextDonateMoney = tempObject.GetComponent<Text>();			 
+		}
 
 		private void UpdateAllSliders(){
 			inPanelSliderStudy.value = marks;
@@ -189,5 +242,13 @@ namespace Stats {
 		}
 
 		public Toggle studyToggle;
+
+		private void UpdateUniverToggle(){
+			if(visitedUniversityToday){
+				StudyingToggleHandle h = studyToggle.GetComponent<StudyingToggleHandle>();
+				studyToggle.isOn = true;
+				h.setEnabled();
+			}
+		}
 	}
 }

@@ -51,10 +51,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24f0eeaf6b5fa74fb59e5d0d17fcb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hunger: 100
+  food: 100
   energy: 100
   marks: 4
   popularityPoints: 0
   pupularityLevel: 1
   money: 5000
   donateMoney: 1
+  visitedUniversityToday: 0
+  doneLabsToday: 0
+  dayOfWeek: 1
+  inPanelSliderStudy: {fileID: 0}
+  mainSliderEnergy: {fileID: 0}
+  mainSliderFood: {fileID: 0}
+  mainSliderStudy: {fileID: 0}
+  mainSliderPopularity: {fileID: 0}
+  statTextMoney: {fileID: 0}
+  statTextDonateMoney: {fileID: 0}
+  studyToggle: {fileID: 0}

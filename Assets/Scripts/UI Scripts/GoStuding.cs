@@ -17,6 +17,6 @@ public class GoStuding : MonoBehaviour {
 
     public void Back()
     {
-        SceneManager.LoadScene(1);
+		SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 }
