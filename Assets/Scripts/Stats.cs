@@ -118,20 +118,26 @@ namespace Stats {
 		}
 
 		public void ConsumeFood(string name) // excepion: KeyNotFoundException
-		{ 
-			food += catalogue.Food[name].restores;
-			money -= catalogue.Food[name].price;
-			donateMoney -= catalogue.Food[name].donatePrice;
-			UpdateAllSliders();
-			UpdateAllNumericStats();
+		{
+			if(catalogue.Food[name].price >= money && catalogue.Food[name].donatePrice >= donateMoney){
+				food += catalogue.Food[name].restores;
+				money -= catalogue.Food[name].price;
+				donateMoney -= catalogue.Food[name].donatePrice;
+			
+				UpdateAllSliders();
+				UpdateAllNumericStats();
+			}
 		}
 
 		public void ConsumeEnergyDrink(string name){  // excepion: KeyNotFoundException
-			energy += catalogue.EnergyDrinks[name].restores;
-			money -= catalogue.EnergyDrinks[name].price;
-			donateMoney -= catalogue.EnergyDrinks[name].donatePrice;
-			UpdateAllSliders();
-			UpdateAllNumericStats();
+			if(catalogue.Food[name].price >= money && catalogue.Food[name].donatePrice >= donateMoney){
+				energy += catalogue.EnergyDrinks[name].restores;
+				money -= catalogue.EnergyDrinks[name].price;
+				donateMoney -= catalogue.EnergyDrinks[name].donatePrice;
+
+				UpdateAllSliders();
+				UpdateAllNumericStats();
+			}
 		}
 
 		private void IncreasePopularity(int value){
