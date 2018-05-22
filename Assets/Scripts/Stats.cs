@@ -34,7 +34,7 @@ namespace Stats {
 			dayOfWeek = 1;
 		}
 
-		private static bool statsObjectCreated = false;
+		//private static bool statsObjectCreated = false;
 
 		void Awake()
 		{
@@ -92,7 +92,7 @@ namespace Stats {
 				EndOfWeek();
 			}
 
-			studyToggle.GetComponent<StudyingToggleHandle>().setUncheckAndUnlock();
+			//studyToggle.GetComponent<StudyingToggleHandle>().setUncheckAndUnlock();
 			UpdateAllSliders();
 			UpdateAllNumericStats();
 		}
@@ -106,31 +106,37 @@ namespace Stats {
 
 		// Пойти в универ. Устанавливает флаг, а очки начисляет в конце дня по его значению
 		public void Study(){
-			energy -= Params.STUDY_ENERGY_COST;
-			food -= Params.STUDY_FOOD_COST;
-			visitedUniversityToday = true;
+			if(Params.STUDY_ENERGY_COST <= energy && Params.STUDY_FOOD_COST <= food){
+				energy -= Params.STUDY_ENERGY_COST;
+				food -= Params.STUDY_FOOD_COST;
+				visitedUniversityToday = true;
 
-			UpdateAllSliders();
+				UpdateAllSliders();
+			}
 		}
 
 		// Сделать лабы. Устанавливает флаг, а очки начисляет в конце дня по его значению
 		public void DoLabs(){
-			energy -= Params.LABS_ENERGY_COST;
-			food -= Params.LABS_FOOD_COST;
-			doneLabsToday = true; //TODO переделать
-			UpdateAllSliders();
+			if(Params.LABS_ENERGY_COST <= energy && Params.LABS_FOOD_COST <= food){
+				energy -= Params.LABS_ENERGY_COST;
+				food -= Params.LABS_FOOD_COST;
+				doneLabsToday = true; //TODO переделать
+				UpdateAllSliders();
+			}
 		}
 
 		public void GoToSC(){
-			energy -= Params.SK_ENERGY_COST;
-			food -= Params.SK_FOOD_COST;
-			IncreasePopularity(Params.POP_INCREASE_SC);
-			UpdateAllSliders();
+			if(Params.SK_ENERGY_COST <= energy && Params.SK_FOOD_COST <= food){
+				energy -= Params.SK_ENERGY_COST;
+				food -= Params.SK_FOOD_COST;
+				IncreasePopularity(Params.POP_INCREASE_SC);
+				UpdateAllSliders();
+			}
 		}
 
 		public void ConsumeFood(string name) // excepion: KeyNotFoundException
 		{
-			if(catalogue.Food[name].price >= money && catalogue.Food[name].donatePrice >= donateMoney){
+			if(catalogue.Food[name].price <= money && catalogue.Food[name].donatePrice <= donateMoney){
 				food += catalogue.Food[name].restores;
 				money -= catalogue.Food[name].price;
 				donateMoney -= catalogue.Food[name].donatePrice;
@@ -141,7 +147,7 @@ namespace Stats {
 		}
 
 		public void ConsumeEnergyDrink(string name){  // excepion: KeyNotFoundException
-			if(catalogue.Food[name].price >= money && catalogue.Food[name].donatePrice >= donateMoney){
+			if(catalogue.EnergyDrinks[name].price <= money && catalogue.EnergyDrinks[name].donatePrice <= donateMoney){
 				energy += catalogue.EnergyDrinks[name].restores;
 				money -= catalogue.EnergyDrinks[name].price;
 				donateMoney -= catalogue.EnergyDrinks[name].donatePrice;
@@ -247,7 +253,7 @@ namespace Stats {
 			if(visitedUniversityToday){
 				StudyingToggleHandle h = studyToggle.GetComponent<StudyingToggleHandle>();
 				studyToggle.isOn = true;
-				h.setEnabled();
+				//h.setEnabled();
 			}
 		}
 	}

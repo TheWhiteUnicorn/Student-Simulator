@@ -12,6 +12,15 @@ public class StudyingToggleHandle : MonoBehaviour{
 			thisToggle.interactable = false;
 	}
 
+	 /// <summary>
+	/// OnMouseDown is called when the user has pressed the mouse button while
+	/// over the GUIElement or Collider.
+	/// </summary>
+	void OnMouseDown()
+	{
+		Debug.Log("Toggle Clicked");
+	}
+
 	public void setUncheckAndUnlock(){
 		thisToggle.isOn = false;
 		thisToggle.interactable = true;
