@@ -5,24 +5,38 @@ using UnityEngine.UI;
 
 public class StudyingToggleHandle : MonoBehaviour{
 	public Toggle thisToggle;
-	
-	public void setEnabled(){
-		//thisToggle.isOn = true;
-		if(thisToggle.isOn)
-			thisToggle.interactable = false;
-	}
+	public GameObject  statsObj;
+	private Stats.Stats stats;
 
-	 /// <summary>
-	/// OnMouseDown is called when the user has pressed the mouse button while
-	/// over the GUIElement or Collider.
-	/// </summary>
-	void OnMouseDown()
+	void Awake()
 	{
-		Debug.Log("Toggle Clicked");
+		stats = statsObj.GetComponent<Stats.Stats>();
 	}
 
-	public void setUncheckAndUnlock(){
-		thisToggle.isOn = false;
-		thisToggle.interactable = true;
+	public void OnClick(){
+		if(!Stats.Stats.visitedUniversityToday){
+			thisToggle.isOn = true;
+			stats.Study();
+		}
 	}
+	
+	// public void setEnabled(){
+	// 	//thisToggle.isOn = true;
+	// 	if(thisToggle.isOn)
+	// 		thisToggle.interactable = false;
+	// }
+
+	//  /// <summary>
+	// /// OnMouseDown is called when the user has pressed the mouse button while
+	// /// over the GUIElement or Collider.
+	// /// </summary>
+	// void OnMouseDown()
+	// {
+	// 	Debug.Log("Toggle Clicked");
+	// }
+
+	// public void setUncheckAndUnlock(){
+	// 	thisToggle.isOn = false;
+	// 	thisToggle.interactable = true;
+	// }
 }

@@ -92,7 +92,7 @@ namespace Stats {
 				EndOfWeek();
 			}
 
-			//studyToggle.GetComponent<StudyingToggleHandle>().setUncheckAndUnlock();
+			studyToggle.isOn = false;
 			UpdateAllSliders();
 			UpdateAllNumericStats();
 		}
@@ -251,9 +251,7 @@ namespace Stats {
 
 		private void UpdateUniverToggle(){
 			if(visitedUniversityToday){
-				StudyingToggleHandle h = studyToggle.GetComponent<StudyingToggleHandle>();
 				studyToggle.isOn = true;
-				//h.setEnabled();
 			}
 		}
 	}
