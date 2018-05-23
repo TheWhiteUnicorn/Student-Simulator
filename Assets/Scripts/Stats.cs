@@ -40,12 +40,6 @@ namespace Stats {
 		{
 			bindAllSliders();
 			SetBoundsToSliders();
-
-			// if (!statsObjectCreated)
-			// {
-			// 	DontDestroyOnLoad(this.gameObject);
-			// 	statsObjectCreated = true;
-			// }
 		}
 
 		void OnEnable()
