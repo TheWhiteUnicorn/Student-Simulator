@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 6ede7a04a0317d943b9bd1c8562d6c8e
-timeCreated: 1521984043
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -49,6 +47,7 @@ ModelImporter:
     4300010: Circle_000
     7400000: Default Take
     9500000: //RootNode
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -68,6 +67,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

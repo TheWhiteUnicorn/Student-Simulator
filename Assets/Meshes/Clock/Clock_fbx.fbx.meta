@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 134a9e28a98c99746a3586b55ee6130d
-timeCreated: 1521984036
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -60,6 +58,7 @@ ModelImporter:
     7400026: Hemi|Stunden
     9500000: //RootNode
     10800000: Hemi
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -79,6 +78,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
