@@ -37586,46 +37586,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114533807211856296, guid: 0f86c063df73fcd4e96bad33353034be,
-        type: 2}
-      propertyPath: inPanelSliderStudy
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114533807211856296, guid: 0f86c063df73fcd4e96bad33353034be,
-        type: 2}
-      propertyPath: mainSliderEnergy
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114533807211856296, guid: 0f86c063df73fcd4e96bad33353034be,
-        type: 2}
-      propertyPath: mainSliderFood
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114533807211856296, guid: 0f86c063df73fcd4e96bad33353034be,
-        type: 2}
-      propertyPath: mainSliderStudy
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114533807211856296, guid: 0f86c063df73fcd4e96bad33353034be,
-        type: 2}
-      propertyPath: mainSliderPopularity
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114533807211856296, guid: 0f86c063df73fcd4e96bad33353034be,
-        type: 2}
-      propertyPath: statTextMoney
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114533807211856296, guid: 0f86c063df73fcd4e96bad33353034be,
-        type: 2}
-      propertyPath: statTextDonateMoney
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114533807211856296, guid: 0f86c063df73fcd4e96bad33353034be,
-        type: 2}
-      propertyPath: studyToggle
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f86c063df73fcd4e96bad33353034be, type: 2}
   m_IsPrefabParent: 0
