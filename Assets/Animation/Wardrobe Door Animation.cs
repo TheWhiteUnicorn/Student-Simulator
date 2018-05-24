@@ -2,19 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WardrobeDoorManagement : MonoBehaviour {
+public class WardrobeDoorAnimation : MonoBehaviour {
 
 	public Animator animController;
 	// Use this for initialization
 	public bool IsOpen = false;
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 	public void OnMouseDown ()
     {
@@ -29,5 +21,4 @@ public class WardrobeDoorManagement : MonoBehaviour {
 			IsOpen = false;
 		}
     }
-
 }

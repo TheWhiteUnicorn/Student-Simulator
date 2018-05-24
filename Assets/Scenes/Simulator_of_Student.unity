@@ -16017,7 +16017,8 @@ Prefab:
       propertyPath: DarkPanel
       value: 
       objectReference: {fileID: 782814715}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114713416318181160, guid: 368e8edd5fbaea44795ef31937d63589, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 368e8edd5fbaea44795ef31937d63589, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &989742461
