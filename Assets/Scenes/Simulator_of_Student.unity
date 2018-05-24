@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.63
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44707233, g: 0.501254, b: 0.56008995, a: 0.63}
+  m_IndirectSpecularColor: {r: 0.4460296, g: 0.5008961, b: 0.55974394, a: 0.63}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -9256,6 +9256,7 @@ GameObject:
   - component: {fileID: 507471420}
   - component: {fileID: 507471419}
   - component: {fileID: 507471418}
+  - component: {fileID: 507471421}
   m_Layer: 5
   m_Name: StudClubButton
   m_TagString: Untagged
@@ -9371,6 +9372,20 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 507471416}
+--- !u!114 &507471421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 507471416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &510650700
 GameObject:
   m_ObjectHideFlags: 0
@@ -24769,6 +24784,7 @@ GameObject:
   - component: {fileID: 1555409449}
   - component: {fileID: 1555409448}
   - component: {fileID: 1555409447}
+  - component: {fileID: 1555409450}
   m_Layer: 5
   m_Name: GymButton
   m_TagString: Untagged
@@ -24873,6 +24889,20 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1555409445}
+--- !u!114 &1555409450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1555409445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1568464751
 GameObject:
   m_ObjectHideFlags: 0
