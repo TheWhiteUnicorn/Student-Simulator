@@ -43,18 +43,21 @@ namespace Stats {
 			if(GlobalVariables.isStudied){
 				DoLabs();
 			}
-			bindAllSliders();
+			//bindAllSliders();
 			UpdateUniverToggle();
 			UpdateAllSliders();
 			UpdateAllNumericStats();
 		}
 
-		void OnApplicationQuit()
+		void OnApplicationFocus(bool focusStatus)
 		{
-			saveAllStats();
+			if(focusStatus == false){
+				SaveAllStats();
+				Debug.Log("Focus Lost");
+			}
 		}
 
-		private void saveAllStats(){
+		private void SaveAllStats(){
 			PlayerPrefs.SetInt("food", food);
 			PlayerPrefs.SetInt("energy", energy);
 			PlayerPrefs.SetFloat("marks", marks);
