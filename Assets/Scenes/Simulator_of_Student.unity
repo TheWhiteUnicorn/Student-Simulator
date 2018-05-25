@@ -36993,6 +36993,16 @@ Prefab:
       propertyPath: Help
       value: 
       objectReference: {fileID: 1965167344}
+    - target: {fileID: 114533807211856296, guid: 0f86c063df73fcd4e96bad33353034be,
+        type: 2}
+      propertyPath: help
+      value: 
+      objectReference: {fileID: 1965167344}
+    - target: {fileID: 114533807211856296, guid: 0f86c063df73fcd4e96bad33353034be,
+        type: 2}
+      propertyPath: dayOfWeekDisplay
+      value: 
+      objectReference: {fileID: 180778191}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f86c063df73fcd4e96bad33353034be, type: 2}
   m_IsPrefabParent: 0

@@ -34,7 +34,7 @@ namespace Stats {
 			
 			bool firstEnter = loadAllStatsFromFile();
 			if(firstEnter){
-				Help.SetActive(true);
+				help.SetActive(true);
 			}
 			bindAllSliders();
 			SetBoundsToSliders();
@@ -47,6 +47,7 @@ namespace Stats {
 				DoLabs();
 			}
 			//bindAllSliders();
+			dayOfWeekDisplay.text = daysOfWeekNames[dayOfWeek];
 			UpdateUniverToggle();
 			UpdateAllSliders();
 			UpdateAllNumericStats();
@@ -94,11 +95,11 @@ namespace Stats {
 			dayOfWeek = PlayerPrefs.GetInt("dayOfWeek", 1);
 
 			if(PlayerPrefs.HasKey("food")){
-				ret = true;
+				ret = false;
 				Debug.Log("Stats loaded");
 			}
 			else{
-				ret = false;
+				ret = true;
 				Debug.Log("First enter detected");
 			}
 			return ret;
@@ -131,6 +132,7 @@ namespace Stats {
 
 			//Считаем дни недели
 			++dayOfWeek;
+			dayOfWeekDisplay.text = daysOfWeekNames[dayOfWeek];
 			if(dayOfWeek == 8){
 				dayOfWeek = 1;
 				EndOfWeek();
@@ -213,7 +215,12 @@ namespace Stats {
 		public Slider mainSliderStudy;
 		public Slider mainSliderPopularity;
 
+		// Прочие объекты
+		public Toggle studyToggle;
+		public GameObject help;
+		public Text dayOfWeekDisplay;
 
+		private List<string> daysOfWeekNames = new List<string>() {"Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"};
 
 		void bindAllSliders(){
 			// GameObject tempObject = GameObject.Find("LearningProgresSliderInMenu");
@@ -292,10 +299,6 @@ namespace Stats {
 			statTextMoney.text = Convert.ToString(money);
 			statTextDonateMoney.text = Convert.ToString(donateMoney);
 		}
-
-		public Toggle studyToggle;
-
-		public GameObject Help;
 
 		private void UpdateUniverToggle(){
 			if(visitedUniversityToday){
