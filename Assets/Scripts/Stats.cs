@@ -24,20 +24,15 @@ namespace Stats {
 
 		// Служебные переменные
 		private static int foodDecreasedToday = 0; // Используется для вычитания минимального кол-ва голода за день
-		public static int dayOfWeek;// {get{return dayOfWeek;} private set{}}
+		public static int dayOfWeek = 1;// {get{return dayOfWeek;} private set{}}
 
 		Catalogue catalogue;
-		public Stats(){
-			catalogue = new Catalogue();
-			//visitedUniversityToday = false;
-			//doneLabsToday = false;
-			dayOfWeek = 1;
-		}
-
-		//private static bool statsObjectCreated = false;
 
 		void Awake()
 		{
+			catalogue = new Catalogue();
+			
+			bool firstEnter = loadAllStatsFromFile();
 			bindAllSliders();
 			SetBoundsToSliders();
 		}
@@ -48,10 +43,62 @@ namespace Stats {
 			if(GlobalVariables.isStudied){
 				DoLabs();
 			}
-			bindAllSliders();
+			//bindAllSliders();
 			UpdateUniverToggle();
 			UpdateAllSliders();
-			UpdateAllNumericStats();			
+			UpdateAllNumericStats();
+		}
+
+		void OnApplicationFocus(bool focusStatus)
+		{
+			if(focusStatus == false){
+				SaveAllStats();
+				Debug.Log("Focus Lost");
+			}
+		}
+
+		private void SaveAllStats(){
+			PlayerPrefs.SetInt("food", food);
+			PlayerPrefs.SetInt("energy", energy);
+			PlayerPrefs.SetFloat("marks", marks);
+			PlayerPrefs.SetInt("popularityPoints", popularityPoints);
+			PlayerPrefs.SetInt("pupularityLevel", pupularityLevel);
+			PlayerPrefs.SetInt("money", money);
+			PlayerPrefs.SetInt("donateMoney", donateMoney);
+			PlayerPrefs.SetInt("visitedUniversityToday", Convert.ToInt32(visitedUniversityToday) );
+			PlayerPrefs.SetInt("doneLabsToday", Convert.ToInt32(doneLabsToday));
+			PlayerPrefs.SetInt("foodDecreasedToday", foodDecreasedToday);
+			PlayerPrefs.SetInt("dayOfWeek", dayOfWeek);
+
+			PlayerPrefs.Save();
+			Debug.Log("Stats saved");
+		}
+
+		private bool loadAllStatsFromFile(){
+			bool ret;
+			
+
+			food = PlayerPrefs.GetInt("food", Params.INIT_FOOD);
+			energy = PlayerPrefs.GetInt("energy", Params.INIT_ENERGY);
+			marks = PlayerPrefs.GetFloat("marks", Params.INIT_MARKS);
+			popularityPoints = PlayerPrefs.GetInt("popularityPoints", Params.INIT_POPULARITY_POINTS);
+			pupularityLevel = PlayerPrefs.GetInt("pupularityLevel", Params.INIT_POPULARITY_LEVEL);
+			money = PlayerPrefs.GetInt("money", Params.INIT_MONEY);
+			donateMoney = PlayerPrefs.GetInt("donateMoney", Params.INIT_DONATE_MONEY);
+			visitedUniversityToday = Convert.ToBoolean(PlayerPrefs.GetInt("visitedUniversityToday", 0));
+			doneLabsToday = Convert.ToBoolean(PlayerPrefs.GetInt("doneLabsToday", 0));
+			foodDecreasedToday = PlayerPrefs.GetInt("foodDecreasedToday", 0);
+			dayOfWeek = PlayerPrefs.GetInt("dayOfWeek", 1);
+
+			if(PlayerPrefs.HasKey("food")){
+				ret = true;
+				Debug.Log("Stats loaded");
+			}
+			else{
+				ret = false;
+				Debug.Log("First enter detected");
+			}
+			return ret;
 		}
 
 		// Вызывать при окончании дня. Производит пересчеты необходимых статов для следующего дня
@@ -162,6 +209,8 @@ namespace Stats {
 		public Slider mainSliderFood;
 		public Slider mainSliderStudy;
 		public Slider mainSliderPopularity;
+
+
 
 		void bindAllSliders(){
 			// GameObject tempObject = GameObject.Find("LearningProgresSliderInMenu");
