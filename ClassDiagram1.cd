@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Stats.Stats">
+    <Position X="2.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAIAQAAB0IAAAYoEESABQBAAAGABTAEgAABAAIBmE4=</HashCode>
+      <FileName>Assets\Scripts\Stats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Stats.Catalogue">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ParamsConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Stats.Params">
+    <Position X="6" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>SRARQAAFAQCADgAAAAkCgSBQAAAABAAgFCQAUQABgAA=</HashCode>
+      <FileName>Assets\Scripts\ParamsConfig.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Stats.ConsumableProduct">
+    <Position X="9" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAQAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ParamsConfig.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
