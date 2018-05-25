@@ -33,6 +33,9 @@ namespace Stats {
 			catalogue = new Catalogue();
 			
 			bool firstEnter = loadAllStatsFromFile();
+			if(firstEnter){
+				Help.SetActive(true);
+			}
 			bindAllSliders();
 			SetBoundsToSliders();
 		}
@@ -291,6 +294,8 @@ namespace Stats {
 		}
 
 		public Toggle studyToggle;
+
+		public GameObject Help;
 
 		private void UpdateUniverToggle(){
 			if(visitedUniversityToday){
