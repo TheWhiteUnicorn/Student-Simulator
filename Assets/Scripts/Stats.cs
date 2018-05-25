@@ -213,6 +213,10 @@ namespace Stats {
 		public Slider mainSliderStudy;
 		public Slider mainSliderPopularity;
 
+		// Прочие объекты
+		public Toggle studyToggle;
+		public GameObject Help;
+
 
 
 		void bindAllSliders(){
@@ -292,10 +296,6 @@ namespace Stats {
 			statTextMoney.text = Convert.ToString(money);
 			statTextDonateMoney.text = Convert.ToString(donateMoney);
 		}
-
-		public Toggle studyToggle;
-
-		public GameObject Help;
 
 		private void UpdateUniverToggle(){
 			if(visitedUniversityToday){
